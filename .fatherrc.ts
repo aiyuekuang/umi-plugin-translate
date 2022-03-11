@@ -4,28 +4,18 @@ export default [{
   target: 'node',
   cjs: { type: 'babel', lazy: true },
   disableTypeCheck: true,
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      { libraryName: 'antd', libraryDirectory: 'es', style: true },
-      'antd',
-    ],
-  ],
 },
 {
-  entry: 'ui/index.tsx',
+  entry: 'src/index.ts',
   umd: {
     name: 'tasks',
     minFile: isProd,
     sourcemap: !isProd,
   },
-  extraExternals: ['antd', 'react', 'react-dom', 'xterm'],
+  extraExternals: ['xterm'],
   typescriptOpts: {
     check: false,
     globals: {
-      antd: 'window.antd',
-      react: 'window.React',
-      'react-dom': 'window.ReactDOM',
     },
   },
 }];
