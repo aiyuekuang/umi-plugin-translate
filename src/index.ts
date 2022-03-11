@@ -27,7 +27,7 @@ export default function (api: IApi) {
           }),
           path:joi.string(),
         });
-        return joi.alternatives(joi.object(itemSchema), itemSchema);
+        return joi.alternatives(itemSchema, itemSchema);
       },
     },
   });
