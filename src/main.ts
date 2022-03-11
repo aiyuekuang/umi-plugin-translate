@@ -6,38 +6,18 @@ import translate from '@vitalets/google-translate-api';
 
 export default class TranslateMain {
 
-  static propTypes = {};
-
   translateTypes = [{ type: 'en', fileName: 'en-US' }, { type: 'ja', fileName: 'ja-JP' }];
-  index = 0;
-  symbol = '\n';
   suffix = 'ts';
   path = './src/components/locales/';
-  file: any = null;
-  outputFileName = [];
   from = { type: 'zh-CN', fileName: 'zh-CN' };
-  fixedTranslate: any = null;
+  /** 用来区别每行文本的字符，这里使用换行符*/
+  symbol = '\n';
   /** 需要翻译的文本 */
   translateString: any = [];
   /** 翻译完成的回调*/
   translateCallback= (type: string, fileName: string | string | undefined)=>{
 
   }
-
-  static defaultProps = {
-    /** 查看类型*/
-    translateTypes: ['en'],
-    /** 输出的语言文件的后缀名*/
-    suffix: 'ts',
-    /** 输出的语言文件相对项目根目录的地址 */
-    path: './src/components/locales/',
-    /** 输出文件的其他名称设置，与上方translateTypes的数组一一对应即可，注意必须保持一致*/
-    outputFileName: [],
-    /** 翻译源文件的语言简码*/
-    from: { type: 'zh-CN', fileName: 'zh-CN' },
-    /** 固定人工翻译的字段集合，如{en:{head:"tou"}}，结构语言->字段*/
-    fixedTranslate: null,
-  };
 
   constructor(config: any) {
     if (config.translateTypes) {
@@ -49,24 +29,17 @@ export default class TranslateMain {
     if (config.path) {
       this.path = config.path;
     }
-    if (config.outputFileName) {
-      this.outputFileName = config.outputFileName;
-    }
     if (config.from) {
       this.from = config.from;
     }
-    if (config.fixedTranslate) {
-      this.fixedTranslate = config.fixedTranslate;
-    }
-    if (config.fixedTranslate) {
-      this.fixedTranslate = config.fixedTranslate;
-    }
+
 
 
     /** 获中文所有文件信息*/
     for (let i of this.getAllFile()) {
       let text = this.getTranslateString(i.file);
 
+      /** 将每个需要翻译的文件的信息都整理集中*/
       this.translateString.push({
         ...i,
         text: text,
@@ -99,17 +72,6 @@ export default class TranslateMain {
           });
         }
       }
-    }
-  }
-
-  objectLoop(obj: any, fun: any) {
-    for (let i in obj) {
-      if (typeof (obj[i]) === 'object') {
-        this.objectLoop(obj[i], fun);
-      } else {
-        fun(obj, i);
-      }
-      this.index++;
     }
   }
 

@@ -9,8 +9,25 @@ export default function (api: IApi) {
   api.describe({
     key: 'translate',
     config: {
+      default:{
+        localPath: "zh-CN",
+        suffix:'ts',
+        translateTypes:[{ type: 'en', fileName: 'en-US' }, { type: 'ja', fileName: 'ja-JP' }],
+        from:{ type: 'zh-CN', fileName: 'zh-CN' },
+        path:join(absSrcPath,'locales'),
+      },
       schema(joi:any) {
-        return joi.string();
+        const itemSchema = joi.object({
+          suffix:joi.string(),
+          translateTypes:joi.array().items({
+            type: joi.string(), fileName: joi.string()
+          }),
+          from:joi.object({
+            type: joi.string(), fileName: joi.string()
+          }),
+          path:joi.string(),
+        });
+        return joi.alternatives(joi.object(itemSchema), itemSchema);
       },
     },
   });
@@ -25,10 +42,7 @@ export default function (api: IApi) {
 
   /** 根据配置文件进行翻译 */
   function translateFile() {
-    // @ts-ignore
-    const serversFolder = join(absSrcPath,  'locales');
-
-    let translate = new TranslateMain({path:serversFolder,source:serversFolder + "/zh-CN"})
+    let translate = new TranslateMain(api.config.openAPI)
     translate.translateCallback = (type,filename)=>{
       api.logger.log(`翻译：${filename}文件---`,type,"完成")
     }
