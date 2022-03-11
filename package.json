@@ -6,12 +6,12 @@
     "name": "ztao",
     "email": "2092186738@qq.com"
   },
-  "repository": "aiyuekuang/translate",
+  "repository": "https://github.com/aiyuekuang/umijs-plugin-translate.git",
   "scripts": {
     "start": "npm run build && cross-env APP_ROOT=example umi dev",
     "build": "father-build",
     "npm": "npm set registry https://registry.npmjs.org",
-    "fabu": "npm run lib && npm run npm && npm run git && npm version patch && npm publish && npm run git",
+    "fabu": "npm publish",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
