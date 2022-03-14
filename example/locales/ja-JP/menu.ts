@@ -20,7 +20,7 @@ export default {
   'menu.channelAnalysis.policyAnalysis':'  「政策分析」 ',
   'menu.dashboard':'  コックピット ',
   'menu.productTrading.commodityAnalysis.commodityShelfAnalysis':'  「製品負荷分析」 ',
-  'menu.productTrading.subReplenishmentAnalysis.customerPickUpRate':'  「顧客配達率」 ',
+  'menu.productTrading.subReplenishmentAnalysis.customerPickUpRate':'  「顧客配達料金」 ',
   'menu.channelAnalysis.psiAnalysis.customerPsiAnalysis':'  「小売顧客PSI分析」 ',
   'menu.channelAnalysis.customerAnalysis.customerQuantityAnalysis':'  「顧客数分析」 ',
   'menu.channelAnalysis.psiAnalysis.inventoryAnalysis':'  「在庫分析」 ',
