@@ -1,12 +1,19 @@
 {
-  "name": "@umijs/plugin-translate",
+  "name": "@umi/plugin-translate",
   "main": "lib/index.js",
+  "version": "1.0.0",
   "description": "translate",
   "authors": {
     "name": "ztao",
     "email": "2092186738@qq.com"
   },
-  "repository": "https://github.com/aiyuekuang/umijs-plugin-translate.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiyuekuang/umijs-plugin-translate.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "npm run build && cross-env APP_ROOT=example umi dev",
     "build": "father-build",
@@ -63,5 +70,19 @@
   ],
   "dependencies": {
     "@vitalets/google-translate-api": "^8.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/aiyuekuang/umijs-plugin-translate/issues"
+  },
+  "homepage": "https://github.com/aiyuekuang/umijs-plugin-translate#readme",
+  "directories": {
+    "example": "example",
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "umi"
+  ],
+  "author": "ztao",
+  "license": "MIT"
 }
