@@ -5,38 +5,61 @@
 
 translate
 
-## Install
+## 安装
 
 ```bash
-# or yarn
-$ npm install
+$ npm install @umijs/plugin-translate
+# or yarn add @umijs/plugin-translate
 ```
-## Development UI
 
-UI mini start:
+## 使用
 
 ```bash
-$ npm run build --watch
-$ npm run start
+$ umi translate
 ```
 
-<img src="https://user-images.githubusercontent.com/13595509/67024897-bbeede80-f137-11e9-9f19-6a3f0ea3f6cd.png" width="768" />
 
-## Usage
 
-Configure in `.umirc.js`,
+## 准备工作
+
+此为适配umi的插件，国际化规则参照antd，或者antd-pro
+
+![image-20220314103226027](E:\ztao\translate\images\image-20220314103226027.png)
+
+
+
+## 配置
+
+在 umi中的 `config/config.js`,
 
 ```js
-export default {
-  plugins: [
-    ['translate'],
-  ],
+const translate={
+    /** 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的*/
+    suffix: 'ts',
+    /** 输出翻译文件的对应表，一个对象代表一个语言
+     * type：翻译对应的语言（谷歌翻译对应的语言标识）
+     * fileName代表umi对应的语言文件夹和文件名（文件名和文件夹是一致的）
+     * */
+    translateTypes: [{ type: 'en', fileName: 'en-US' }, { type: 'ja', fileName: 'ja-JP' }],
+        /**  输入的翻译类型（以哪种语言作为翻译的源），默认是中文
+     * type：翻译对应的语言（谷歌翻译对应的语言标识）
+     * fileName代表umi对应的语言文件夹和文件名（文件名和文件夹是一致的）
+     * */
+    from: { type: 'zh-CN', fileName: 'zh-CN' },
+    /** 默认国际化文件的路径*/
+    path: join(absSrcPath, 'locales'),
 }
 ```
 
-## Options
+- `suffix` 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的
 
-TODO
+- `translateTypes` 输出翻译文件的对应表，一个对象代表一个语言
+
+- `from` 输入的翻译类型（以哪种语言作为翻译的源），默认是中文
+
+- `path` 默认国际化文件的路径
+
+  
 
 ## LICENSE
 

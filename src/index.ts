@@ -10,9 +10,19 @@ export default function(api: IApi) {
     key: 'translate',
     config: {
       default: {
+        /** 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的*/
         suffix: 'ts',
+        /** 输出翻译文件的对应表，一个对象代表一个语言
+         * type：翻译对应的语言（谷歌翻译对应的语言标识）
+         * fileName代表umi对应的语言文件夹和文件名（文件名和文件夹是一致的）
+         * */
         translateTypes: [{ type: 'en', fileName: 'en-US' }, { type: 'ja', fileName: 'ja-JP' }],
+        /**  输入的翻译类型（以哪种语言作为翻译的源），默认是中文
+         * type：翻译对应的语言（谷歌翻译对应的语言标识）
+         * fileName代表umi对应的语言文件夹和文件名（文件名和文件夹是一致的）
+         * */
         from: { type: 'zh-CN', fileName: 'zh-CN' },
+        /** 默认国际化文件的路径*/
         path: join(absSrcPath, 'locales'),
       },
       schema(joi: any) {
