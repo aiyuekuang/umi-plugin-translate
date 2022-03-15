@@ -1,5 +1,5 @@
 {
-  "name": "@umi/plugin-translate",
+  "name": "umi-plugin-translate",
   "main": "lib/index.js",
   "version": "1.0.0",
   "description": "translate",
@@ -7,13 +7,7 @@
     "name": "ztao",
     "email": "2092186738@qq.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aiyuekuang/umijs-plugin-translate.git"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
+  "repository": "https://github.com/aiyuekuang/umi-plugin-translate.git",
   "scripts": {
     "start": "npm run build && cross-env APP_ROOT=example umi dev",
     "build": "father-build",
@@ -75,11 +69,6 @@
     "url": "https://github.com/aiyuekuang/umijs-plugin-translate/issues"
   },
   "homepage": "https://github.com/aiyuekuang/umijs-plugin-translate#readme",
-  "directories": {
-    "example": "example",
-    "lib": "lib",
-    "test": "test"
-  },
   "keywords": [
     "umi"
   ],

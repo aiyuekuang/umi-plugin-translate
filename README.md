@@ -59,7 +59,7 @@ const translate={
 
 - `path` 默认国际化文件的路径
 
-  
+
 
 ## LICENSE
 
