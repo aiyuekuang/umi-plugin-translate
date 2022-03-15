@@ -32,7 +32,7 @@ $ umi translate or umi tr
 
 在 umi中的 `config/config.js`,
 
-```js
+```ts
 const translate={
     /** 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的*/
     suffix: 'ts',
