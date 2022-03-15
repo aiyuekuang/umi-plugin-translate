@@ -15,7 +15,7 @@ $ npm install @umijs/plugin-translate
 ## 使用
 
 ```bash
-$ umi translate
+$ umi translate or umi tr
 ```
 
 
@@ -47,7 +47,7 @@ const translate={
      * */
     from: { type: 'zh-CN', fileName: 'zh-CN' },
     /** 默认国际化文件的路径*/
-    path: join(absSrcPath, 'locales'),
+    path: 'src/locales',
 }
 ```
 
@@ -57,7 +57,7 @@ const translate={
 
 - `from` 输入的翻译类型（以哪种语言作为翻译的源），默认是中文
 
-- `path` 默认国际化文件的路径
+- `path` 默认国际化文件的路径（默认以antd-pro的位置src/locales）
 
 
 

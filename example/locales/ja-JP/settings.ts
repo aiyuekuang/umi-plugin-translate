@@ -10,7 +10,7 @@ export default {
   'app.settings.basic.nickname':' ニックネーム',
   'app.settings.basic.nickname-message':' 「あなたのニックネームを入力してください！」',
   'app.settings.basic.profile':' 「個人プロフィール」',
-  'app.settings.basic.profile-message':' あなたの個人的なプロフィールを入力してください！」',
+  'app.settings.basic.profile-message':' あなたの個人的なプロフィールを入力してください！',
   'app.settings.basic.profile-placeholder':' 「個人プロフィール」',
   'app.settings.basic.country':' 「国/地域」',
   'app.settings.basic.country-message':' あなたの国や地域を入力してください！」',

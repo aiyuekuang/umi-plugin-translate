@@ -27,7 +27,7 @@ export default class TranslateMain {
       this.suffix = config.suffix;
     }
     if (config.path) {
-      this.path = config.path;
+      this.path =join(config.absSrcPath, config.path) ;
     }
     if (config.from) {
       this.from = config.from;

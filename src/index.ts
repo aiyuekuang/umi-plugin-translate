@@ -23,7 +23,7 @@ export default function(api: IApi) {
          * */
         from: { type: 'zh-CN', fileName: 'zh-CN' },
         /** 默认国际化文件的路径*/
-        path: join(absSrcPath, 'locales'),
+        path: 'src/locales',
       },
       schema(joi: any) {
         const itemSchema = joi.object({
@@ -52,7 +52,7 @@ export default function(api: IApi) {
 
   /** 根据配置文件进行翻译 */
   function translateFile() {
-    let translate = new TranslateMain(api.config.translate);
+    let translate = new TranslateMain({ ...api.config.translate,absSrcPath });
     translate.translateCallback = (type, filename) => {
       api.logger.log(`翻译：${filename}文件---`, type, '完成');
     };
