@@ -1,7 +1,7 @@
 {
   "name": "umi-plugin-translate",
   "main": "lib/index.js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "translate",
   "authors": {
     "name": "ztao",
