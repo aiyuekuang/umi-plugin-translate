@@ -52,7 +52,7 @@ export default function(api: IApi) {
 
   /** 根据配置文件进行翻译 */
   function translateFile() {
-    let translate = new TranslateMain({ ...api.config.translate,absSrcPath });
+    let translate = new TranslateMain({ ...api.config.translate,cwd });
     translate.translateCallback = (type, filename) => {
       api.logger.log(`翻译：${filename}文件---`, type, '完成');
     };

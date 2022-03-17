@@ -8,7 +8,7 @@ export default class TranslateMain {
 
   translateTypes = [{ type: 'en', fileName: 'en-US' }, { type: 'ja', fileName: 'ja-JP' }];
   suffix = 'ts';
-  path = './src/components/locales/';
+  path = './src/locales/';
   from = { type: 'zh-CN', fileName: 'zh-CN' };
   /** 用来区别每行文本的字符，这里使用换行符*/
   symbol = '\n';
@@ -27,7 +27,7 @@ export default class TranslateMain {
       this.suffix = config.suffix;
     }
     if (config.path) {
-      this.path =join(config.absSrcPath, config.path) ;
+      this.path =join(config.cwd, config.path) ;
     }
     if (config.from) {
       this.from = config.from;
@@ -68,7 +68,7 @@ export default class TranslateMain {
             fs.writeFile(i.isRoot ? this.path + '/' + t.fileName + '.' + this.suffix : this.path + '/' + t.fileName + '/' + i.fileName, fileTemp, { encoding: 'utf8' }, err => {
             });
           }).catch((e)=>{
-            console.log("翻译错误")
+            console.log(`${i.fileName}翻译错误`)
           });
         }
       }
