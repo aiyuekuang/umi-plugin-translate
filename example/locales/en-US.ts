@@ -4,16 +4,16 @@
  * @LastEditTime: 2022-03-09 11:51:29
  * @LastEditors: your name
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \csc-admin\src\locales\zh-CN.ts
+ * @FilePath: \csc-admin\src\locales\en-US.ts
  */
-import component from './zh-CN/component';
-import globalHeader from './zh-CN/globalHeader';
-import menu from './zh-CN/menu';
-import pwa from './zh-CN/pwa';
-import settingDrawer from './zh-CN/settingDrawer';
-import settings from './zh-CN/settings';
-import pages from './zh-CN/pages';
-import columns from './zh-CN/columns'
+import component from './en-US/component';
+import globalHeader from './en-US/globalHeader';
+import menu from './en-US/menu';
+import pwa from './en-US/pwa';
+import settingDrawer from './en-US/settingDrawer';
+import settings from './en-US/settings';
+import pages from './en-US/pages';
+import columns from './en-US/columns'
 
 export default {
   'navBar.lang':'language ',

@@ -15,9 +15,9 @@ export default class TranslateMain {
   /** 需要翻译的文本 */
   translateString: any = [];
   /** 翻译完成的回调*/
-  translateCallback= (type: string, fileName: string | string | undefined)=>{
+  translateCallback = (type: string, fileName: string | string | undefined) => {
 
-  }
+  };
 
   constructor(config: any) {
     if (config.translateTypes) {
@@ -27,12 +27,11 @@ export default class TranslateMain {
       this.suffix = config.suffix;
     }
     if (config.path) {
-      this.path =join(config.cwd, config.path) ;
+      this.path = join(config.cwd, config.path);
     }
     if (config.from) {
       this.from = config.from;
     }
-
 
 
     /** 获中文所有文件信息*/
@@ -64,11 +63,14 @@ export default class TranslateMain {
                 fileTemp = fileTemp.replace(i.textArr[s], textArrNew[s]);
               }
             }
-            this.translateCallback(t.type,i.fileName)
+            // fileTemp = fileTemp.replace('/' + this.from.fileName + '/g', '/' + t.fileName + '/');
+            fileTemp = fileTemp.replace(new RegExp(this.from.fileName,'g'),t.fileName);
+
+            this.translateCallback(t.type, i.fileName);
             fs.writeFile(i.isRoot ? this.path + '/' + t.fileName + '.' + this.suffix : this.path + '/' + t.fileName + '/' + i.fileName, fileTemp, { encoding: 'utf8' }, err => {
             });
-          }).catch((e)=>{
-            console.log(`${i.fileName}翻译错误`)
+          }).catch((e) => {
+            console.log(`${i.fileName}翻译错误`);
           });
         }
       }
