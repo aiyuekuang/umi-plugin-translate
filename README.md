@@ -8,8 +8,8 @@ translate
 ## 安装
 
 ```bash
-$ npm install @umijs/plugin-translate
-# or yarn add @umijs/plugin-translate
+$ npm install @umi-plugin-translate
+# or yarn add @umi-plugin-translate
 ```
 
 ## 使用
@@ -52,11 +52,8 @@ const translate={
 ```
 
 - `suffix` 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的
-
-- `translateTypes` 输出翻译文件的对应表，一个对象代表一个语言
-
+- `translateTypes` 输出翻译文件的对应表，一个对象代表一个语言，[翻译语言参照](https://github.com/matheuss/google-translate-api/blob/master/languages.js)
 - `from` 输入的翻译类型（以哪种语言作为翻译的源），默认是中文
-
 - `path` 默认国际化文件的路径（默认以antd-pro的位置src/locales）
 
 
