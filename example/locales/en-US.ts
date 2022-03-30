@@ -16,13 +16,13 @@ import pages from './en-US/pages';
 import columns from './en-US/columns'
 
 export default {
-  'navBar.lang':'language ',
-  'layout.user.link.help':'  help ',
-  'layout.user.link.privacy':'  privacy ',
-  'layout.user.link.terms':'  Terms ',
-  'app.preview.down.block':'  Download this page to Local Project ',
-  'app.welcome.link.fetch-blocks':'  Get all blocks ',
-  'app.welcome.link.block-list':'  Based on Block development, quickly build standard page',
+  'navBar.lang':"language",
+  'layout.user.link.help':"help",
+  'layout.user.link.privacy':"privacy",
+  'layout.user.link.terms':"Terms",
+  'app.preview.down.block':"Download this page to Local Project",
+  'app.welcome.link.fetch-blocks':"Get all blocks",
+  'app.welcome.link.block-list':"Based on Block development, quickly build standard page",
   ...pages,
   ...globalHeader,
   ...menu,

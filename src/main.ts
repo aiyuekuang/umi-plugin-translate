@@ -59,8 +59,10 @@ export default class TranslateMain {
             for (let s of i.textArr.keys()) {
               if (i.textArr[s]) {
                 // i.textArr[s] = i.textArr[s].replace(/'/g,"")
-                textArrNew[s] = '\'' + textArrNew[s].replace(/'/g, '') + '\'';
-                fileTemp = fileTemp.replace(i.textArr[s], textArrNew[s]);
+                textArrNew[s] = textArrNew[s].replace(new RegExp("'",'g'), '');
+                textArrNew[s] = textArrNew[s].replace(new RegExp('"','g'), '');
+                textArrNew[s] = textArrNew[s].replace(/^\s+|\s+$/g,"");
+                fileTemp = fileTemp.replace(new RegExp(i.textArr[s],'g'), '"' + textArrNew[s] + '"');
               }
             }
             // fileTemp = fileTemp.replace('/' + this.from.fileName + '/g', '/' + t.fileName + '/');

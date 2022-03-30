@@ -16,13 +16,13 @@ import pages from './ja-JP/pages';
 import columns from './ja-JP/columns'
 
 export default {
-  'navBar.lang':'言語 ',
-  'layout.user.link.help':'  ヘルプ ',
-  'layout.user.link.privacy':'  プライバシー ',
-  'layout.user.link.terms':'  条項 ',
-  'app.preview.down.block':'  「このページをローカルプロジェクトにダウンロードする」 ',
-  'app.welcome.link.fetch-blocks':'  「すべてのブロックを入手」 ',
-  'app.welcome.link.block-list':'  ブロック開発に基づいて、標準ページを素早く構築する',
+  'navBar.lang':"言語",
+  'layout.user.link.help':"ヘルプ",
+  'layout.user.link.privacy':"プライバシー",
+  'layout.user.link.terms':"条項",
+  'app.preview.down.block':"「このページをローカルプロジェクトにダウンロードする」",
+  'app.welcome.link.fetch-blocks':"「すべてのブロックを入手」",
+  'app.welcome.link.block-list':"ブロック開発に基づいて、標準ページを素早く構築する",
   ...pages,
   ...globalHeader,
   ...menu,
