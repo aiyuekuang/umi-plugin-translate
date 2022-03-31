@@ -24,7 +24,7 @@ $ umi translate or umi tr
 
 此为适配umi的插件，国际化规则参照antd，或者antd-pro
 
-![image-20220314103226027](E:\ztao\translate\images\image-20220314103226027.png)
+![image-20220314103226027](https://github.com/aiyuekuang/umi-plugin-translate/blob/master/images/image-20220314103226027.png)
 
 
 
