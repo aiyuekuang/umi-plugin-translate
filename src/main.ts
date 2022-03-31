@@ -18,6 +18,8 @@ export default class TranslateMain {
   translateCallback = (type: string, fileName: string | string | undefined) => {
 
   };
+  /** 人工翻译的字符 */
+  humanTranslate:any={}
 
   constructor(config: any) {
     if (config.translateTypes) {
@@ -32,6 +34,9 @@ export default class TranslateMain {
     if (config.from) {
       this.from = config.from;
     }
+    if (config.humanTranslate) {
+      this.humanTranslate = config.humanTranslate;
+    }
 
 
     /** 获中文所有文件信息*/
@@ -45,7 +50,6 @@ export default class TranslateMain {
         textArr: text.split('\n'),
       });
     }
-
   }
 
   async run() {
@@ -58,11 +62,12 @@ export default class TranslateMain {
             /** 根据返回的字符进行数组的拆分*/
             for (let s of i.textArr.keys()) {
               if (i.textArr[s]) {
-                // i.textArr[s] = i.textArr[s].replace(/'/g,"")
-                textArrNew[s] = textArrNew[s].replace(new RegExp("'",'g'), '');
-                textArrNew[s] = textArrNew[s].replace(new RegExp('"','g'), '');
-                textArrNew[s] = textArrNew[s].replace(/^\s+|\s+$/g,"");
-                fileTemp = fileTemp.replace(new RegExp(i.textArr[s],'g'), '"' + textArrNew[s] + '"');
+                let textArrTemp = this.arrangeText(i.textArr[s])
+                if(this.humanTranslate[t.fileName]?.[textArrTemp]){
+                  fileTemp = fileTemp.replace(new RegExp(i.textArr[s]), `"${this.humanTranslate[t.fileName]?.[textArrTemp]}"/*${textArrTemp}*/`);
+                }else {
+                  fileTemp = fileTemp.replace(new RegExp(i.textArr[s]), `"${this.arrangeText(textArrNew[s])}"/*${textArrTemp}*/`);
+                }
               }
             }
             // fileTemp = fileTemp.replace('/' + this.from.fileName + '/g', '/' + t.fileName + '/');
@@ -77,6 +82,14 @@ export default class TranslateMain {
         }
       }
     }
+  }
+
+  /** 整理字符串*/
+  arrangeText(textArrTemp:string){
+    textArrTemp = textArrTemp.replace(new RegExp("'",'g'), '');
+    textArrTemp = textArrTemp.replace(new RegExp('"','g'), '');
+      textArrTemp = textArrTemp.replace(/^\s+|\s+$/g, "");
+    return textArrTemp
   }
 
   /** 获取所有的翻译文件*/

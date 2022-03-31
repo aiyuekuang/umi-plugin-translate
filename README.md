@@ -48,6 +48,16 @@ const translate={
     from: { type: 'zh-CN', fileName: 'zh-CN' },
     /** 默认国际化文件的路径*/
     path: 'src/locales',
+    /** {
+            'en-US':{
+              "运营组织层级":"set"
+            },
+            'ja-JP':{
+              "运营组织层级":"set日本"
+            }
+          }
+    */
+    humanTranslate:{}
 }
 ```
 
@@ -55,6 +65,7 @@ const translate={
 - `translateTypes` 输出翻译文件的对应表，一个对象代表一个语言，[翻译语言参照](https://github.com/matheuss/google-translate-api/blob/master/languages.js)
 - `from` 输入的翻译类型（以哪种语言作为翻译的源），默认是中文
 - `path` 默认国际化文件的路径（默认以antd-pro的位置src/locales）
+- `humanTranslate` 在翻译到这个文本时会使用设置的文本，而不会使用机翻。如：en-US是国际化的本地代码，跟translateTypes中的fileName保持一致，他的子对象key是被翻译的字符串，value是翻译后的对应语言的文本
 
 
 
