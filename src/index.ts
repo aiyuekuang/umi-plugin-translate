@@ -10,7 +10,7 @@ export default function(api: IApi) {
     key: 'translate',
     config: {
       default: {
-        /** 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的*/
+        /** 翻译文件的后缀名，一般在使用umi创建项目时，是有js或者ts两种方式的 */
         suffix: 'ts',
         /** 输出翻译文件的对应表，一个对象代表一个语言
          * type：翻译对应的语言（谷歌翻译对应的语言标识）
