@@ -8,8 +8,8 @@ translate
 ## 安装
 
 ```bash
-$ npm install @umi-plugin-translate
-# or yarn add @umi-plugin-translate
+$ npm install umi-plugin-translate
+# or yarn add umi-plugin-translate
 ```
 
 ## 使用
