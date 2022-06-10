@@ -94,7 +94,7 @@ export default class TranslateMain {
 
   /** 获取所有的翻译文件*/
   getAllFile() {
-    let pathName = this.path + '/' + this.from.type;
+    let pathName = this.path + '/' + this.from.fileName;
 
     let fileMap: any = [{
       position: this.path,
